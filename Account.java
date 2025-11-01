@@ -1,20 +1,54 @@
 class Account {
-    private int accountNo;
+private int accountNo;
     private String name;
     private float amount;
 
-//    method create account
-    public void insert(int a, String n, float amt){
-        this.accountNo = a;
-        this.name = n;
-        this.amount = amt;
+//    constructor
+    public Account(int accountNo, String name, float amount) {
+        this.accountNo = accountNo;
+        this.name = name;
+        this.amount = amount;
+    }
+//    constructor 2
+    public Account(int accountNo, String name) {
+        this(accountNo, name, 0);
+    }
+//    constructor 3
+    public Account(int accountNo) {
+        this(accountNo, "unknown", 0);
+    }
+//    constructor 4
+    public Account() {
+        this(100, "unknown", 0);
     }
 
-//    Deposit
+    public void setAccountNo(int a) {
+        this.accountNo = a;
+    }
+
+    public void setName(String n) {
+        this.name = n;
+    }
+
+    public void setAmount(float amo) {
+        this.amount = amo;
+    }
+
+
+    public int getAccountNo() {
+        return accountNo;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public float getAmount() {
+        return amount;
+    }
+
+    //    Deposit
     public void deposit(float amt){
         this.amount = this.amount + amt;
-        //this.amount += amo;
-        //+ this.amount + " from " + this.name
         System.out.println(amt + " deposited");
     }
 
@@ -25,7 +59,6 @@ class Account {
         }else{
 
             this.amount = this.amount - amt;
-            //this.amount -= amo;
             System.out.println(amt + " withdrawn");
 
         }
@@ -36,8 +69,8 @@ class Account {
         System.out.println("balance = " + this.amount);
     }
 
-// toString Method
+    // toString Method
     public String toString() {
-        return "Account { "+ "accountNo = " + accountNo + ", " + "name = " + name + ", " + "amount = " + amount + "}";
+        return "Account no: " + this.accountNo + ", name: " + this.name + ", amount: " + this.amount;
     }
 }
