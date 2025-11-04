@@ -48,14 +48,29 @@ private int accountNo;
 
     //    Deposit
     public void deposit(float amt){
-        this.amount = this.amount + amt;
-        System.out.println(amt + " deposited");
+        if (amt <= 0){
+
+            System.out.println("Deposit amount must be greater than 0!");
+
+        }else {
+            
+            this.amount = this.amount + amt;
+            System.out.println(amt + " deposited successfully.");
+
+        }
     }
 
     // Withdraw method
     public void withdraw(float amt){
-        if (this.amount < amt){
+
+        if (amt <= 0 ){
+
+            System.out.println("Withdraw amount must be greater than 0!");
+
+        } else if (this.amount < amt){
+
             System.out.println("insufficient balance");
+
         }else{
 
             this.amount = this.amount - amt;
@@ -66,7 +81,7 @@ private int accountNo;
 
     // check balance
     public void checkBalance(){
-        System.out.println("balance = " + this.amount);
+        System.out.println("Your current balance: " + this.amount);
     }
 
     // toString Method

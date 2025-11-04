@@ -18,8 +18,8 @@ public class Main{
         a1.setAmount(in.nextFloat());
        // System.out.println(a1.getAmount());
 
-        System.out.println(a1.toString());
-
+        System.out.println("===========================");
+       System.out.println(a1.toString());
         System.out.println("===========================");
 
         int choice;
